@@ -1,0 +1,14 @@
+GET http://localhost:3001/api/notes
+###
+Get http://localhost:3001/api/notes/2
+###
+DELETE http://localhost:3001/api/notes/2
+###
+post http://localhost:3001/api/notes
+Content-Type: application/json
+//must have one empty line or else you'll run into error "Header name must be a valid HTTP toekn ["{}"]"
+
+{
+    "content": "sent from VS code rest client",
+    "important":true
+}
