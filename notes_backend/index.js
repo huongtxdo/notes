@@ -16,7 +16,8 @@ const unknownEndpoint = (request, response) => {
 
 app.use(express.json());
 app.use(requestLogger);
-app.use(cors());
+app.use(cors()); //cross-origin resources sharing
+app.use(express.static("build")); //built-in middleware from express
 
 let notes = [
   {
@@ -83,6 +84,7 @@ app.post("/api/notes", (request, response) => {
 
 app.use(unknownEndpoint);
 
-const PORT = 3001;
-app.listen(PORT);
-console.log(`Server running on port ${PORT}`);
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
