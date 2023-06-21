@@ -1,0 +1,21 @@
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+
+{
+    "content": "Ensure that everything still workds",
+    "important": true
+}
+###
+GET http://localhost:3001/api/notes
+###
+GET http://localhost:3001/api/notes/6492c344583f6f536921448b
+###
+DELETE http://localhost:3001/api/notes/6492c36d583f6f536921448e
+###
+PUT http://localhost:3001/api/notes/6492c37f583f6f5369214490
+Content-Type: application/json
+
+{
+    "content": "This is a replacement",
+    "important": true
+}
