@@ -2,7 +2,7 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-    "content": "Ensure that everything still workds",
+    "content": "lol",
     "important": true
 }
 ###
@@ -16,6 +16,6 @@ PUT http://localhost:3001/api/notes/6492c37f583f6f5369214490
 Content-Type: application/json
 
 {
-    "content": "This is a replacement",
+    "content": "update with validations",
     "important": true
 }
