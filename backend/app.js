@@ -1,5 +1,6 @@
 const config = require('./utils/config')
 const express = require('express')
+require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const notesRouter = require('./controllers/notes')
@@ -25,7 +26,7 @@ app.use(middleware.requestLogger)
 
 app.use('/api/notes', notesRouter)
 
-app.use(unknownEndpoint) //handler of requests with unknown endpoint, place last
-app.use(errorHandler) //this has to be the last loaded middleware, place last
+app.use(middleware.unknownEndpoint) //handler of requests with unknown endpoint, place last
+app.use(middleware.errorHandler) //this has to be the last loaded middleware, place last
 
 module.exports = app
