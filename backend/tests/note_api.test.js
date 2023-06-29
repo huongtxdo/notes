@@ -6,7 +6,6 @@ const app = require('../app')
 const api = supertest(app)
 const Note = require('../models/note')
 const helper = require('./test_helper')
-const note = require('../models/note')
 
 // this is run before every single test
 beforeEach(async () => {
@@ -79,14 +78,14 @@ test('note without content is not added', async () => {
   expect(notesAtEnd).toHaveLength(helper.initialNotes.length)
 })
 
-test('a specific note can be viewd', async () => {
+test('a specific note can be viewed', async () => {
   const notesAtStart = await helper.notesInDb()
   const noteToView = notesAtStart[0]
 
   const resultNote = await api
     .get(`/api/notes/${noteToView.id}`)
     .expect(200)
-    .expect('content-Type', /application\/json/)
+    .expect('Content-Type', /application\/json/)
 
   expect(resultNote.body).toEqual(noteToView)
 })

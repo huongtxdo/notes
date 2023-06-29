@@ -21,6 +21,7 @@ notesRouter.post('/', async (request, response) => {
 
   const savedNote = await note.save()
   response.status(201).json(savedNote)
+  // we no longer need to try..catch error because we use the library express-async-errors
 })
 
 notesRouter.delete('/:id', async (request, response) => {
