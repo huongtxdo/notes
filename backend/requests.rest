@@ -1,3 +1,7 @@
+GET http://localhost:3001/api/notes
+###
+GET http://localhost:3001/api/users
+###
 POST http://localhost:3001/api/notes
 Content-Type: application/json
 
@@ -6,11 +10,36 @@ Content-Type: application/json
     "important": true
 }
 ###
-GET http://localhost:3001/api/notes
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username": "justkidney",
+    "name": "Huong Do",
+    "password": "secretpass"
+}
+###
+POST http://localhost:3001/api/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1c3RraWRuZXkiLCJpZCI6IjY0OWRlNjZiMDg1ZDZhY2NiMmZmMTI3ZiIsImlhdCI6MTY4ODI4Mjc5Nn0.i7ui5cwjrRuu8cFqZizdj-a24TKxtevFgR-Y9NzGkwA
+
+{
+    "content": "Retried without changing the Bearer",
+    "important": true
+    
+}
+###
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "username": "justkidney",
+    "password": "secretpass"
+}
 ###
 GET http://localhost:3001/api/notes/6492c344583f6f536921448b
 ###
-DELETE http://localhost:3001/api/notes/6492c36d583f6f536921448e
+DELETE http://localhost:3001/api/notes/649e28ddb68f68a8f3a02a77
 ###
 PUT http://localhost:3001/api/notes/6492c37f583f6f5369214490
 Content-Type: application/json

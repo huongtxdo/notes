@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 // This can be added in case the timeout issue is not solved with adding timeout in test
 // mongoose.set("bufferTimeoutMS", 30000)
-const supertest = require('supertest')
 const app = require('../app')
+const supertest = require('supertest')
 const api = supertest(app)
+
 const Note = require('../models/note')
 const helper = require('./test_helper')
 
