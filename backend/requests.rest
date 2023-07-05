@@ -26,7 +26,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imp1c
 {
     "content": "Retried without changing the Bearer",
     "important": true
-    
 }
 ###
 POST http://localhost:3001/api/login
