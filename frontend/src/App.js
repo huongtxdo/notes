@@ -70,7 +70,6 @@ const App = () => {
   const notesToShow = showAll ? notes : notes.filter((note) => note.important)
 
   const addNote = (noteObject) => {
-    // us
     noteFormRef.current.toggleVisibility()
 
     noteService.create(noteObject).then((returnedNote) => {
