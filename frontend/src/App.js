@@ -10,6 +10,8 @@ import Togglable from './components/Togglable'
 import noteService from './services/notes'
 import loginService from './services/login'
 
+import './index.css'
+
 const App = () => {
   const [notes, setNotes] = useState([])
   const [showAll, setShowAll] = useState(true)

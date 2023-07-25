@@ -17,7 +17,7 @@ notesRouter.get('/', async (request, response) => {
   response.json(notes)
 })
 
-notesRouter.get('/:id', async (request, response, next) => {
+notesRouter.get('/:id', async (request, response) => {
   const note = await Note.findById(request.params.id)
   note ? response.json(note) : response.status(404).end()
 })
